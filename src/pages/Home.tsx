@@ -141,6 +141,9 @@ const released = Boolean(LINKS.arxiv)
 export default function Home() {
   return (
     <>
+      {/* The section bar sits on top from the start, so the light section wipes straight over the hero. */}
+      <SubNav items={SECTIONS} cta={{ to: '/leaderboard', label: 'Leaderboard' }} />
+
       <section className="dark hero hero-pin">
         <div className="wrap hero-grid">
           <div>
@@ -167,7 +170,6 @@ export default function Home() {
 
       {/* Everything after the hero scrolls up over it (see .hero-pin / .over in styles.css). */}
       <div className="over">
-      <SubNav items={SECTIONS} cta={{ to: '/leaderboard', label: 'Leaderboard' }} />
 
       <section className="band" id="overview">
         <div className="wrap">

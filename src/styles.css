@@ -569,13 +569,13 @@ table.lb caption { border-top: 0; padding: 12px 0 0; }
 .over { position: relative; z-index: 1; }
 .over > .band:not(.alt):not(.dark) { background: var(--bg); }
 @media (min-width: 900px) and (min-height: 720px) {
-  .hero-pin { position: sticky; top: var(--header); z-index: 0; min-height: calc(100svh - var(--header) - var(--subnav)); display: flex; align-items: center; }
+  .hero-pin { position: sticky; top: calc(var(--header) + var(--subnav)); z-index: 0; min-height: calc(100svh - var(--header) - var(--subnav)); display: flex; align-items: center; }
   .hero-pin > .wrap { width: 100%; }
 }
 @supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) and (min-width: 900px) and (min-height: 720px) {
-    .hero-pin > .wrap { animation: hero-sink linear both; animation-timeline: scroll(root); animation-range: 0 85svh; transform-origin: 50% 30%; }
-    .over > .subnav + .band { animation: band-wipe linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+    .hero-pin > .wrap { animation: hero-sink linear both; animation-timeline: scroll(root); animation-range: 0 60svh; transform-origin: 50% 40%; }
+    .over > .band:first-child { animation: band-wipe linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
   }
   @media (prefers-reduced-motion: no-preference) {
     /* Blocks drift up and fade in as they enter the screen, scrubbed by the scroll. */
@@ -589,7 +589,7 @@ table.lb caption { border-top: 0; padding: 12px 0 0; }
   }
 }
 @keyframes rise { from { opacity: 0; translate: 0 48px; } }
-@keyframes hero-sink { to { scale: 0.92; opacity: 0.25; filter: blur(2px); } }
+@keyframes hero-sink { to { scale: 0.9; opacity: 0; filter: blur(3px); translate: 0 -6svh; } }
 @keyframes band-wipe { from { clip-path: polygon(0 14vw, 100% 0, 100% 100%, 0 100%); } to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
 
 /* Every section after the first comes in the same way: it overlaps the end of the section above
