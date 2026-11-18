@@ -538,12 +538,13 @@ table.lb caption { border-top: 0; padding: 12px 0 0; }
 .page-head .paper-title { font-size: clamp(30px, 4.2vw, 50px); max-width: 980px; }
 .page-head .authors { color: var(--dk-ink); }
 .page-head .affils { margin-top: 6px; }
-/* City strip: one row that drifts endlessly (CityStrip.tsx drives scrollLeft); still scrollable by hand */
-.cities { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 5 * 16px) / 6); overflow-x: auto; scroll-snap-type: none; padding-bottom: 4px; scrollbar-width: none; overscroll-behavior-x: contain; }
-.cities::-webkit-scrollbar { display: none; }
+/* City strip: one row that drifts endlessly (CityStrip.tsx animates the track's transform; wheel/drag/swipe move it by hand) */
+.cities { display: block; overflow: clip; overflow-clip-margin: 6px; container-type: inline-size; touch-action: pan-y; cursor: grab; user-select: none; padding: 0; }
+.cities:active { cursor: grabbing; }
+.cities-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100cqw - 5 * 16px) / 6); gap: 16px; width: max-content; will-change: transform; }
 .ctile { scroll-snap-align: none; }
-@media (max-width: 1000px) { .cities { grid-auto-columns: calc((100% - 3 * 16px) / 4); } }
-@media (max-width: 600px) { .cities { grid-auto-columns: 44%; } }
+@media (max-width: 1000px) { .cities-track { grid-auto-columns: calc((100cqw - 3 * 16px) / 4); } }
+@media (max-width: 600px) { .cities-track { grid-auto-columns: 44cqw; } }
 .map-foot { max-width: 960px; margin-inline: auto; }
 
 /* No orphan words: balance short prose blocks (browsers balance up to ~6 lines; longer ones fall back to pretty) */
