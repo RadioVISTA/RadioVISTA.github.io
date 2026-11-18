@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { prefersReducedMotion } from '../data'
 
 export interface SubNavItem {
   id: string
@@ -36,6 +37,13 @@ export default function SubNav({ items, cta }: { items: SubNavItem[]; cta: { to:
       bar.current.style.opacity = '1'
     }
     place()
+    // On phones the tabs overflow: slide the strip so the current tab is in view (no page scroll).
+    const n = nav.current
+    const a = n?.querySelector<HTMLAnchorElement>(`a[href="#${active}"]`)
+    if (n && a && n.scrollWidth > n.clientWidth) {
+      const left = a.offsetLeft - (n.clientWidth - a.offsetWidth) / 2
+      n.scrollTo({ left: Math.max(0, left), behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+    }
     window.addEventListener('resize', place)
     return () => window.removeEventListener('resize', place)
   }, [active])

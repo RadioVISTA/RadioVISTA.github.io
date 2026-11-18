@@ -176,7 +176,16 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .subnav nav a:hover { color: var(--dk-ink); }
 .subnav nav a[aria-current='true'] { color: var(--dk-ink); }
 .subnav .btn { min-height: 44px; padding: 0 16px; font-size: 14px; flex: none; }
-@media (max-width: 640px) { .subnav .btn { display: none; } }
+@media (max-width: 640px) {
+  .subnav .btn { display: none; }
+  /* Phones: a slimmer bar, the tabs run to the screen edge and fade there to show they scroll. */
+  :root { --subnav: 46px; }
+  .subnav-inner { padding-right: 0; }
+  .subnav nav { gap: 0; margin-left: -12px; padding-right: 24px; scroll-padding-inline: 24px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 36px), transparent); }
+  .subnav nav a { font-size: 14px; }
+}
 
 /* Body sections */
 .band { padding: var(--sp-section) 0; }
@@ -300,6 +309,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .dumbbell .chance-label { fill: var(--mist); font-size: 11.5px; }
 .dumbbell .frame { stroke: var(--line-2); fill: none; }
 .dumbbell .ours text.name { fill: var(--ink); font-weight: 700; }
+.dumbbell text.name { paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--ink-2); margin-top: 14px; }
 .legend span { display: inline-flex; align-items: center; gap: 8px; }
 .legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
@@ -533,10 +543,12 @@ table.lb caption { border-top: 0; padding: 12px 0 0; }
   .ctile { scroll-snap-align: start; }
 }
 @media (max-width: 560px) {
-  .card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: start; }
-  .card .media { aspect-ratio: 1; }
-  .card h3 { margin-top: 0; font-size: 18px; }
-  .card p { font-size: 15px; }
+  /* Thumbnail on the left spanning both rows; title and text stack beside it. */
+  .card { display: grid; grid-template-columns: 96px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 16px; align-items: start; }
+  .card .media { aspect-ratio: 1; grid-row: 1 / span 2; }
+  .card h3 { margin: 2px 0 6px; font-size: 18px; }
+  .card p { font-size: 15px; line-height: 1.5; margin: 0; text-wrap: pretty; }
+  .cards { row-gap: 28px; }
 }
 @media (max-width: 700px) { .radar-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); } .chart-legend li { white-space: normal; } }
 .muted { color: var(--mist); }
