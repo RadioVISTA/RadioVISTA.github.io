@@ -558,3 +558,58 @@ table.lb caption { border-top: 0; padding: 12px 0 0; }
 .ptable { font-size: 13.5px; }
 .ptable tbody th, .ptable td { padding-top: 5px; padding-bottom: 5px; }
 .ptable thead th { padding-top: 8px; padding-bottom: 7px; }
+
+/* ---------- Scroll motion ----------
+   Native scroll-driven animations (Chrome, Edge, Safari 26). Browsers without them, and readers
+   who prefer reduced motion, get the plain static page. Smooth wheel scrolling is Lenis (src/smooth.ts). */
+
+/* Home: the hero stays put while the rest of the page slides up over it. The first light band
+   comes in on a diagonal edge that flattens as it rises; the hero sinks back and dims under it.
+   Only where the hero fits on one screen, so nothing in it is covered before it has been seen. */
+.over { position: relative; z-index: 1; }
+.over > .band:not(.alt):not(.dark) { background: var(--bg); }
+@media (min-width: 900px) and (min-height: 720px) {
+  .hero-pin { position: sticky; top: var(--header); z-index: 0; min-height: calc(100svh - var(--header) - var(--subnav)); display: flex; align-items: center; }
+  .hero-pin > .wrap { width: 100%; }
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 900px) and (min-height: 720px) {
+    .hero-pin > .wrap { animation: hero-sink linear both; animation-timeline: scroll(root); animation-range: 0 85svh; transform-origin: 50% 30%; }
+    .over > .subnav + .band { animation: band-wipe linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    /* Blocks drift up and fade in as they enter the screen, scrubbed by the scroll. */
+    :is(.band .head, .page-head, .card, .stat, .group, .wmap, .cities, .matrix, .bars, .chart-card, .case-card, .split > *, .takeaway, .ptable-scroll, .table-scroll) {
+      animation: rise linear both; animation-timeline: view(); animation-range: entry 5% entry 65%;
+    }
+    :is(.card, .stat, .group):nth-child(2) { animation-range: entry 10% entry 72%; }
+    :is(.card, .stat, .group):nth-child(3) { animation-range: entry 15% entry 79%; }
+    :is(.card, .stat, .group):nth-child(4) { animation-range: entry 20% entry 86%; }
+    .split > :nth-child(2) { animation-range: entry 12% entry 75%; }
+  }
+}
+@keyframes rise { from { opacity: 0; translate: 0 48px; } }
+@keyframes hero-sink { to { scale: 0.92; opacity: 0.25; filter: blur(2px); } }
+@keyframes band-wipe { from { clip-path: polygon(0 14vw, 100% 0, 100% 100%, 0 100%); } to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
+
+/* Every section after the first comes in the same way: it overlaps the end of the section above
+   by --wipe and enters on a diagonal edge that flattens as it rises, so the change of band reads as
+   one panel sliding over another rather than a flat seam. The section it covers sinks back as it
+   leaves the top of the screen. --wipe stays within the smallest section padding (64px), so only
+   empty padding is ever covered. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .band + .band {
+      --wipe: min(6vw, 64px);
+      position: relative;
+      margin-top: calc(-1 * var(--wipe));
+      padding-top: calc(var(--sp-section) + var(--wipe));
+      scroll-margin-top: calc(-1 * var(--wipe));
+      animation: band-wipe-n linear both; animation-timeline: view(); animation-range: entry 0% entry 55%;
+    }
+    .band + .band.tight { padding-top: calc(var(--sp-tight) + var(--wipe)); }
+    .band > .wrap { animation: band-sink linear both; animation-timeline: view(); animation-range: exit 10% exit 100%; transform-origin: 50% 0; }
+  }
+}
+@keyframes band-wipe-n { from { clip-path: polygon(0 var(--wipe), 100% 0, 100% 100%, 0 100%); } to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
+@keyframes band-sink { to { scale: 0.96; opacity: 0.35; } }

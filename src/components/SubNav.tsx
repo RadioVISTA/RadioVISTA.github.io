@@ -20,7 +20,9 @@ export default function SubNav({ items, cta }: { items: SubNavItem[]; cta: { to:
         const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
         if (vis[0]) setActive(vis[0].target.id)
       },
-      { rootMargin: '-120px 0px -55% 0px' },
+      // Top inset clears the header + bar + scroll-padding (128px), so after an anchor jump the
+      // section above, whose bottom edge sits right at that line, no longer counts as in view.
+      { rootMargin: '-136px 0px -55% 0px' },
     )
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()

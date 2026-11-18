@@ -6,6 +6,7 @@ const Findings = lazy(() => import('./pages/Findings'))
 const Paper = lazy(() => import('./pages/Paper'))
 import NotFound from './pages/NotFound'
 import { LINKS } from './site'
+import { resetScroll, startSmoothScroll } from './smooth'
 
 const NAV = [
   { to: '/leaderboard', label: 'Leaderboard' },
@@ -24,7 +25,10 @@ const TITLES: Record<string, string> = {
 function RouteEffects() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    if (!hash) window.scrollTo(0, 0)
+    startSmoothScroll()
+  }, [])
+  useEffect(() => {
+    if (!hash) resetScroll()
   }, [pathname, hash])
   useEffect(() => {
     document.title = TITLES[pathname] ?? 'Page not found | RadioVISTA'

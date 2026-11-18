@@ -141,7 +141,7 @@ const released = Boolean(LINKS.arxiv)
 export default function Home() {
   return (
     <>
-      <section className="dark hero">
+      <section className="dark hero hero-pin">
         <div className="wrap hero-grid">
           <div>
             <p className="kicker">A physics-exact benchmark for vision-language models</p>
@@ -165,6 +165,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Everything after the hero scrolls up over it (see .hero-pin / .over in styles.css). */}
+      <div className="over">
       <SubNav items={SECTIONS} cta={{ to: '/leaderboard', label: 'Leaderboard' }} />
 
       <section className="band" id="overview">
@@ -353,6 +355,7 @@ export default function Home() {
           {released && <CopyBlock text={BIBTEX} label="BibTeX citation" />}
         </div>
       </section>
+      </div>
     </>
   )
 }
