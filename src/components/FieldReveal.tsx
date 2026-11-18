@@ -47,6 +47,8 @@ export default function FieldReveal() {
     let raf = 0
     let manual = false
     let visible = true
+    let inView = true
+    let covered = false
     const t0 = performance.now()
     const frame = (t: number) => {
       const p = Math.min(1, (t - t0) / dur)
@@ -58,12 +60,28 @@ export default function FieldReveal() {
       if (visible) raf = requestAnimationFrame(frame)
     }
     raf = requestAnimationFrame(frame)
-    const io = new IntersectionObserver(([e]) => {
+    // Run only while the lens can be seen: on screen, and (home page, where the hero is pinned)
+    // not yet covered by the section sliding over it. A sticky hero never leaves the viewport, so
+    // the observer alone would keep the loop repainting for the whole page.
+    const sync = () => {
       const was = visible
-      visible = e.isIntersecting
+      visible = inView && !covered
       if (visible && !was) raf = requestAnimationFrame(frame)
+    }
+    const io = new IntersectionObserver(([e]) => {
+      inView = e.isIntersecting
+      sync()
     })
     io.observe(el)
+    const cover = el.closest('.hero-pin')?.parentElement?.querySelector<HTMLElement>('.over')
+    const onScroll = () => {
+      if (!cover) return
+      const bars = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
+      covered = cover.getBoundingClientRect().top <= bars
+      sync()
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     const move = (e: PointerEvent) => {
       manual = true
       const b = el.getBoundingClientRect()
@@ -77,6 +95,7 @@ export default function FieldReveal() {
     return () => {
       cancelAnimationFrame(raf)
       io.disconnect()
+      window.removeEventListener('scroll', onScroll)
       el.removeEventListener('pointermove', move)
       el.removeEventListener('pointerleave', leave)
       el.style.setProperty('--r', `${R}%`)
@@ -108,7 +127,7 @@ export default function FieldReveal() {
         <span className="scale">
           −110 <i /> −20&nbsp;dBm
         </span>
-        <button className="toggle" onClick={() => setFull((f) => !f)} aria-pressed={full}>
+        <button className="toggle" type="button" onClick={() => setFull((f) => !f)}>
           {full ? 'Use the lens' : 'Show the whole field'}
         </button>
       </div>

@@ -9,12 +9,15 @@ const DRAG_PX = 6 // movement beyond this turns a press into a drag (no click)
  * Twelve engine meshes on an endless, slowly drifting strip. The drift is a transform
  * animation (runs on the compositor, sub-pixel smooth, unaffected by main-thread load);
  * wheel, drag and swipe move the same animation by hand. Hover or press a city to lay
- * its simulated field over the render.
+ * its simulated field over the render. A Pause button stops the drift for good (WCAG 2.2.2),
+ * and a tile reached with Tab is brought into view before the strip pauses on it.
  */
 export default function CityStrip() {
   const m = useManifest()
   const cities = useCities()
   const [on, setOn] = useState<string | null>(null)
+  const [stopped, setStopped] = useState(false)
+  const stoppedRef = useRef(false)
   const byId = Object.fromEntries((cities ?? []).map((c) => [c.id, c]))
   const view = useRef<HTMLDivElement>(null)
   const track = useRef<HTMLDivElement>(null)
@@ -63,7 +66,7 @@ export default function CityStrip() {
 
     const update = () => {
       if (!anim) return
-      const paused = hover || focus || pressed.current !== null || performance.now() < holdUntil || reduce.matches
+      const paused = stoppedRef.current || hover || focus || pressed.current !== null || performance.now() < holdUntil || reduce.matches
       if (paused) anim.pause()
       else anim.play()
     }
@@ -118,7 +121,13 @@ export default function CityStrip() {
     const leave = (e: PointerEvent) => {
       if (e.pointerType === 'mouse') { hover = false; update() }
     }
-    const fin = () => { focus = true; update() }
+    const fin = (e: FocusEvent) => {
+      focus = true
+      // Keyboard focus may land on a tile translated out of the clipped strip: bring it to the left edge.
+      const t = e.target as HTMLElement
+      if (t.matches(':focus-visible') && tr.contains(t)) setOffset(t.offsetLeft)
+      update()
+    }
     const fout = () => { focus = false; update() }
 
     const ro = new ResizeObserver(build)
@@ -153,11 +162,12 @@ export default function CityStrip() {
     }
   }, [n])
 
-  // Pause while a city's field is shown.
+  // Pause while a city's field is shown, or for good once the visitor pressed Pause.
   useEffect(() => {
     pressed.current = on
+    stoppedRef.current = stopped
     sync.current()
-  }, [on])
+  }, [on, stopped])
 
   // Two copies so the strip can wrap seamlessly; the second is hidden from assistive tech.
   const items = m ? [...m.gallery.map((g) => ({ g, clone: false })), ...m.gallery.map((g) => ({ g, clone: true }))] : []
@@ -183,7 +193,7 @@ export default function CityStrip() {
                 }}
               >
                 <span className="frame">
-                  <img className="r" src={RV + g.render.replace('.webp', '_s.webp')} alt="" decoding="async" draggable={false} />
+                  <img className="r" src={RV + g.render.replace('.webp', '_s.webp')} alt="" loading="lazy" decoding="async" draggable={false} />
                   <img className="f" src={RV + g.field.replace('.webp', '_s.webp')} alt="" loading="lazy" decoding="async" draggable={false} />
                 </span>
                 <span className="name">
@@ -195,7 +205,12 @@ export default function CityStrip() {
           })}
         </div>
       </div>
-      <p className="strip-hint">Each tile is a 2 km engine mesh. Hover or tap one to lay its simulated field over it.</p>
+      <p className="strip-hint">
+        Each tile is a 2 km engine mesh. Hover or tap one to lay its simulated field over it.
+        <button type="button" className="strip-pause" onClick={() => setStopped((s) => !s)}>
+          {stopped ? 'Play' : 'Pause'}
+        </button>
+      </p>
     </>
   )
 }

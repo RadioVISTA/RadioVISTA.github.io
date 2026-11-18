@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react'
 import { RV, useManifest } from '../data'
+import { ViewTabs } from './ui'
 
 const LEVELS = [
   { k: 'L1', name: 'Free space', note: 'no buildings' },
@@ -29,13 +30,7 @@ export default function MatchedGrid() {
 
   return (
     <div>
-      <div className="view-tabs" role="group" aria-label="Grid view">
-        {VIEWS.map((v) => (
-          <button key={v.v} type="button" aria-pressed={view === v.v} onClick={() => setView(v.v)}>
-            {v.label}
-          </button>
-        ))}
-      </div>
+      <ViewTabs value={view} options={VIEWS} onChange={setView} label="Grid view" panelId="matched-panel" />
       <div className="matrix-bar">
         {view === 'adds' ? (
           <div className="legend">
@@ -50,7 +45,7 @@ export default function MatchedGrid() {
         )}
       </div>
 
-      <div className={`matrix${sel ? ' dim' : ''}`} onMouseLeave={() => setSel(null)}>
+      <div id="matched-panel" role="tabpanel" className={`matrix${sel ? ' dim' : ''}`} onPointerLeave={() => setSel(null)}>
         <div className="corner" />
         {MODES.map((md, c) => (
           <div key={md.k} className={`ch${sel?.[1] === c ? ' on' : ''}`}>
@@ -70,7 +65,7 @@ export default function MatchedGrid() {
               const st = mt?.stats?.[`${lv.k}${md.k}`]
               const on = sel !== null && (sel[0] === r || sel[1] === c)
               return (
-                <div key={md.k} className={`mcell${on ? ' on' : ''}`} onMouseEnter={() => setSel([r, c])}>
+                <div key={md.k} className={`mcell${on ? ' on' : ''}`} onPointerEnter={() => setSel([r, c])}>
                   {mt?.adds && (
                     <img className={view === 'adds' ? 'shown' : ''} style={{ ['--d' as string]: `${c * 70}ms` }} src={RV + mt.adds[i]} alt={view === 'adds' ? `${alt}: new coverage` : ''} loading="lazy" />
                   )}

@@ -75,7 +75,7 @@ export default function App() {
       </main>
       <footer className="footer">
         <div className="wrap footer-inner">
-          <span>RadioVISTA@2026</span>
+          <span>© 2026 RadioVISTA</span>
           <div className="footer-logos">
             <img src="/brand/maxwell.png" alt="Maxwell" />
             <img src="/brand/bjtu-mimo.png" alt="MIMO" />

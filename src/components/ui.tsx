@@ -1,4 +1,4 @@
-import { useRef, useState, type ReactNode } from 'react'
+import { useId, useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 /** Paper figure on a white plate (the figures are drawn for a white page). Opens full size in a dialog. */
@@ -22,8 +22,8 @@ export function Plate({ src, alt }: { src: string; alt: string }) {
 export function ResourceButton({ href, children, primary }: { href: string | null; children: ReactNode; primary?: boolean }) {
   if (!href)
     return (
-      <span className="btn soon" title="Available with the arXiv release">
-        {children} <span className="note">soon</span>
+      <span className="btn soon">
+        {children} <span className="note">soon<span className="sr-only">, available with the arXiv release</span></span>
       </span>
     )
   return (
@@ -42,22 +42,70 @@ export function RouteButton({ to, children, primary }: { to: string; children: R
 }
 
 export function CopyBlock({ text, label }: { text: string; label: string }) {
-  const [done, setDone] = useState(false)
+  const [state, setState] = useState<'idle' | 'done' | 'fail'>('idle')
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(text)
-      setDone(true)
-      setTimeout(() => setDone(false), 1600)
+      setState('done')
     } catch {
-      /* clipboard unavailable: the text stays selectable */
+      // Clipboard blocked: say so; the text stays selectable.
+      setState('fail')
     }
+    setTimeout(() => setState('idle'), 2400)
   }
   return (
     <div className="codeblock">
       <pre aria-label={label}>{text}</pre>
       <button className="copy" onClick={copy}>
-        {done ? 'Copied' : 'Copy BibTeX'}
+        <span aria-live="polite">{state === 'done' ? 'Copied' : state === 'fail' ? 'Select and copy' : 'Copy BibTeX'}</span>
       </button>
+    </div>
+  )
+}
+
+/** Underlined tab strip that switches one panel in place (WAI-ARIA tabs: arrow keys move
+ *  between tabs, only the current tab is in the Tab order). Render the panel with `tabPanelProps`. */
+export function ViewTabs<T extends string>({
+  value,
+  options,
+  onChange,
+  label,
+  className = '',
+  panelId,
+}: {
+  value: T
+  options: { v: T; label: string }[]
+  onChange: (v: T) => void
+  label: string
+  className?: string
+  panelId: string
+}) {
+  const base = useId()
+  const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
+    const i = options.findIndex((o) => o.v === value)
+    const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? options.length - 1 : null
+    if (n === null) return
+    e.preventDefault()
+    const next = options[(n + options.length) % options.length]
+    onChange(next.v)
+    document.getElementById(`${base}-${next.v}`)?.focus()
+  }
+  return (
+    <div className={`view-tabs ${className}`} role="tablist" aria-label={label} onKeyDown={onKey}>
+      {options.map((o) => (
+        <button
+          key={o.v}
+          id={`${base}-${o.v}`}
+          type="button"
+          role="tab"
+          aria-selected={value === o.v}
+          aria-controls={panelId}
+          tabIndex={value === o.v ? 0 : -1}
+          onClick={() => onChange(o.v)}
+        >
+          {o.label}
+        </button>
+      ))}
     </div>
   )
 }

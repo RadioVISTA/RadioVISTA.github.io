@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { RV, useJson } from '../data'
+import { ViewTabs } from './ui'
 
 interface Region { x: number; y: number; w: number; h: number; ref: number; tgt: number }
 interface Case {
@@ -29,14 +30,9 @@ export default function CaseCompare() {
 
   return (
     <figure className="case-card">
-      <div className="view-tabs case-tabs" role="group" aria-label="Field shown">
-        {VIEWS.map((v) => (
-          <button key={v.v} type="button" aria-pressed={view === v.v} onClick={() => setView(v.v)}>
-            {v.label}
-          </button>
-        ))}
-      </div>
+      <ViewTabs value={view} options={VIEWS} onChange={setView} label="Field shown" className="case-tabs" panelId="case-frame" />
       <div
+        id="case-frame"
         className="case-frame"
         role="img"
         aria-label={`2 km engine render with regions R1 to R4. ${VIEWS.find((v) => v.v === view)?.note}. Best-covered region: ${best}.`}

@@ -131,7 +131,7 @@ export default function Leaderboard() {
           <div className="table-scroll" ref={table}>
             <table className="lb" id="lb">
               <caption>
-                Best entry per column in green. Retries report Pass@4 at temperature 0.7 and the correction rate after
+                Best entry per column in bold. Retries report Pass@4 at temperature 0.7 and the correction rate after
                 feedback, both excluding G4. Source: Table 2 of the paper.
               </caption>
               <thead>
@@ -150,7 +150,7 @@ export default function Leaderboard() {
               <tbody>
                 {random && (
                   <tr className="ref">
-                    <td>Random guessing</td>
+                    <th scope="row">Random guessing</th>
                     {cols.map((c) => (
                       <td key={c}>{random.scores[c].toFixed(1)}</td>
                     ))}
@@ -159,16 +159,16 @@ export default function Leaderboard() {
                 {sections.map((s) => (
                   <Fragment key={s.title}>
                     <tr className="sep">
-                      <td colSpan={cols.length + 1}>{s.title}</td>
+                      <th colSpan={cols.length + 1} scope="colgroup">{s.title}</th>
                     </tr>
                     {s.rows.map((r) => {
                       const isMean = r.group.endsWith('mean')
                       return (
                         <tr key={r.name} className={`vt ${isMean ? 'mean' : r.group === 'ours' ? 'ours' : ''}`}>
-                          <td>
+                          <th scope="row">
                             {DISPLAY[r.name] ?? r.name}
                             {r.group === 'ours' && <span className="tag">Ours</span>}
-                          </td>
+                          </th>
                           {cols.map((c) => {
                             const v = r.scores[c]
                             const isBest = !isMean && v === best[c]
