@@ -1,0 +1,23 @@
+# Dependencies and builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local tooling caches and review output
+.hf-assets/
+.impeccable/
+.taste-skill/
+shots/
+
+# Environment and editors
+*.local
+.env*
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db

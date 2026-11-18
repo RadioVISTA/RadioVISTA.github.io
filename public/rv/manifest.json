@@ -1,0 +1,163 @@
+{
+ "cities": 100,
+ "hero": {
+  "city": "rome",
+  "window": [
+   0,
+   1000,
+   477,
+   1477
+  ],
+  "render": "hero_render.webp",
+  "field": "hero_field.webp"
+ },
+ "matched": {
+  "window": [
+   1400,
+   2000,
+   17,
+   617
+  ],
+  "tiles": [
+   "m_L1M1.webp",
+   "m_L1M2.webp",
+   "m_L1M3.webp",
+   "m_L1M4.webp",
+   "m_L2M1.webp",
+   "m_L2M2.webp",
+   "m_L2M3.webp",
+   "m_L2M4.webp",
+   "m_L3M1.webp",
+   "m_L3M2.webp",
+   "m_L3M3.webp",
+   "m_L3M4.webp"
+  ],
+  "adds": [
+   "a_L1M1.webp",
+   "a_L1M2.webp",
+   "a_L1M3.webp",
+   "a_L1M4.webp",
+   "a_L2M1.webp",
+   "a_L2M2.webp",
+   "a_L2M3.webp",
+   "a_L2M4.webp",
+   "a_L3M1.webp",
+   "a_L3M2.webp",
+   "a_L3M3.webp",
+   "a_L3M4.webp"
+  ],
+  "stats": {
+   "L1M1": {
+    "coverage": 67.1,
+    "added": 67.1
+   },
+   "L1M2": {
+    "coverage": 67.1,
+    "added": 0.0
+   },
+   "L1M3": {
+    "coverage": 67.1,
+    "added": 0.0
+   },
+   "L1M4": {
+    "coverage": 67.1,
+    "added": 0.0
+   },
+   "L2M1": {
+    "coverage": 1.2,
+    "added": 1.2
+   },
+   "L2M2": {
+    "coverage": 23.9,
+    "added": 22.8
+   },
+   "L2M3": {
+    "coverage": 49.1,
+    "added": 25.1
+   },
+   "L2M4": {
+    "coverage": 49.8,
+    "added": 0.7
+   },
+   "L3M1": {
+    "coverage": 1.2,
+    "added": 1.2
+   },
+   "L3M2": {
+    "coverage": 23.6,
+    "added": 22.5
+   },
+   "L3M3": {
+    "coverage": 48.6,
+    "added": 25.0
+   },
+   "L3M4": {
+    "coverage": 49.3,
+    "added": 0.7
+   }
+  },
+  "tau_dbm": -90.0
+ },
+ "gallery": [
+  {
+   "id": "new_york",
+   "render": "city_new_york_render.webp",
+   "field": "city_new_york_field.webp"
+  },
+  {
+   "id": "rio_de_janeiro",
+   "render": "city_rio_de_janeiro_render.webp",
+   "field": "city_rio_de_janeiro_field.webp"
+  },
+  {
+   "id": "paris",
+   "render": "city_paris_render.webp",
+   "field": "city_paris_field.webp"
+  },
+  {
+   "id": "cairo",
+   "render": "city_cairo_render.webp",
+   "field": "city_cairo_field.webp"
+  },
+  {
+   "id": "lusaka",
+   "render": "city_lusaka_render.webp",
+   "field": "city_lusaka_field.webp"
+  },
+  {
+   "id": "mumbai",
+   "render": "city_mumbai_render.webp",
+   "field": "city_mumbai_field.webp"
+  },
+  {
+   "id": "tokyo",
+   "render": "city_tokyo_render.webp",
+   "field": "city_tokyo_field.webp"
+  },
+  {
+   "id": "sydney",
+   "render": "city_sydney_render.webp",
+   "field": "city_sydney_field.webp"
+  },
+  {
+   "id": "oslo",
+   "render": "city_oslo_render.webp",
+   "field": "city_oslo_field.webp"
+  },
+  {
+   "id": "la_paz",
+   "render": "city_la_paz_render.webp",
+   "field": "city_la_paz_field.webp"
+  },
+  {
+   "id": "dubai",
+   "render": "city_dubai_render.webp",
+   "field": "city_dubai_field.webp"
+  },
+  {
+   "id": "singapore",
+   "render": "city_singapore_render.webp",
+   "field": "city_singapore_field.webp"
+  }
+ ]
+}

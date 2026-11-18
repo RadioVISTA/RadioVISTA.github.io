@@ -1,0 +1,902 @@
+[
+ {
+  "id": "singapore",
+  "country_code": "SG",
+  "lat": 1.294,
+  "lon": 103.806,
+  "name": "Singapore",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "hong_kong",
+  "country_code": "HK",
+  "lat": 22.319,
+  "lon": 114.169,
+  "name": "Hong Kong",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "tokyo",
+  "country_code": "JP",
+  "lat": 35.693,
+  "lon": 139.703,
+  "name": "Tokyo",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "new_york",
+  "country_code": "US",
+  "lat": 40.754,
+  "lon": -73.984,
+  "name": "New York",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "paris",
+  "country_code": "FR",
+  "lat": 48.866,
+  "lon": 2.363,
+  "name": "Paris",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "dubai",
+  "country_code": "AE",
+  "lat": 25.205,
+  "lon": 55.271,
+  "name": "Dubai",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "rio_de_janeiro",
+  "country_code": "BR",
+  "lat": -22.925,
+  "lon": -43.239,
+  "name": "Rio de Janeiro",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "cape_town",
+  "country_code": "ZA",
+  "lat": -33.935,
+  "lon": 18.44,
+  "name": "Cape Town",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "cairo",
+  "country_code": "EG",
+  "lat": 30.055,
+  "lon": 31.25,
+  "name": "Cairo",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "sydney",
+  "country_code": "AU",
+  "lat": -33.883,
+  "lon": 151.207,
+  "name": "Sydney",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "mumbai",
+  "country_code": "IN",
+  "lat": 19.018,
+  "lon": 72.843,
+  "name": "Mumbai",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "beijing",
+  "country_code": "CN",
+  "lat": 39.924,
+  "lon": 116.389,
+  "name": "Beijing",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "taipei",
+  "country_code": "TW",
+  "lat": 25.033,
+  "lon": 121.543,
+  "name": "Taipei",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "seoul",
+  "country_code": "KR",
+  "lat": 37.551,
+  "lon": 126.99,
+  "name": "Seoul",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "jakarta",
+  "country_code": "ID",
+  "lat": -6.2,
+  "lon": 106.845,
+  "name": "Jakarta",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "kuala_lumpur",
+  "country_code": "MY",
+  "lat": 3.147,
+  "lon": 101.71,
+  "name": "Kuala Lumpur",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "bangkok",
+  "country_code": "TH",
+  "lat": 13.735,
+  "lon": 100.56,
+  "name": "Bangkok",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "ho_chi_minh_city",
+  "country_code": "VN",
+  "lat": 10.776,
+  "lon": 106.69,
+  "name": "Ho Chi Minh City",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "manila",
+  "country_code": "PH",
+  "lat": 14.558,
+  "lon": 121.02,
+  "name": "Manila",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "phnom_penh",
+  "country_code": "KH",
+  "lat": 11.558,
+  "lon": 104.925,
+  "name": "Phnom Penh",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "vientiane",
+  "country_code": "LA",
+  "lat": 17.97,
+  "lon": 102.615,
+  "name": "Vientiane",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "yangon",
+  "country_code": "MM",
+  "lat": 16.79,
+  "lon": 96.155,
+  "name": "Yangon",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "dhaka",
+  "country_code": "BD",
+  "lat": 23.75,
+  "lon": 90.39,
+  "name": "Dhaka",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "kathmandu",
+  "country_code": "NP",
+  "lat": 27.71,
+  "lon": 85.32,
+  "name": "Kathmandu",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "colombo",
+  "country_code": "LK",
+  "lat": 6.9,
+  "lon": 79.865,
+  "name": "Colombo",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "karachi",
+  "country_code": "PK",
+  "lat": 24.86,
+  "lon": 67.03,
+  "name": "Karachi",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "thimphu",
+  "country_code": "BT",
+  "lat": 27.472,
+  "lon": 89.637,
+  "name": "Thimphu",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "almaty",
+  "country_code": "KZ",
+  "lat": 43.238,
+  "lon": 76.945,
+  "name": "Almaty",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "tashkent",
+  "country_code": "UZ",
+  "lat": 41.31,
+  "lon": 69.28,
+  "name": "Tashkent",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "bishkek",
+  "country_code": "KG",
+  "lat": 42.87,
+  "lon": 74.6,
+  "name": "Bishkek",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "ulaanbaatar",
+  "country_code": "MN",
+  "lat": 47.918,
+  "lon": 106.917,
+  "name": "Ulaanbaatar",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "tehran",
+  "country_code": "IR",
+  "lat": 35.72,
+  "lon": 51.41,
+  "name": "Tehran",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "amman",
+  "country_code": "JO",
+  "lat": 31.955,
+  "lon": 35.92,
+  "name": "Amman",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "riyadh",
+  "country_code": "SA",
+  "lat": 24.69,
+  "lon": 46.69,
+  "name": "Riyadh",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "doha",
+  "country_code": "QA",
+  "lat": 25.32,
+  "lon": 51.52,
+  "name": "Doha",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "istanbul",
+  "country_code": "TR",
+  "lat": 41.055,
+  "lon": 28.99,
+  "name": "Istanbul",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "london",
+  "country_code": "GB",
+  "lat": 51.52,
+  "lon": -0.1,
+  "name": "London",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "barcelona",
+  "country_code": "ES",
+  "lat": 41.391,
+  "lon": 2.163,
+  "name": "Barcelona",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "lisbon",
+  "country_code": "PT",
+  "lat": 38.72,
+  "lon": -9.14,
+  "name": "Lisbon",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "rome",
+  "country_code": "IT",
+  "lat": 41.895,
+  "lon": 12.49,
+  "name": "Rome",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "berlin",
+  "country_code": "DE",
+  "lat": 52.52,
+  "lon": 13.41,
+  "name": "Berlin",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "amsterdam",
+  "country_code": "NL",
+  "lat": 52.365,
+  "lon": 4.89,
+  "name": "Amsterdam",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "brussels",
+  "country_code": "BE",
+  "lat": 50.845,
+  "lon": 4.355,
+  "name": "Brussels",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "zurich",
+  "country_code": "CH",
+  "lat": 47.375,
+  "lon": 8.535,
+  "name": "Zurich",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "vienna",
+  "country_code": "AT",
+  "lat": 48.21,
+  "lon": 16.365,
+  "name": "Vienna",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "warsaw",
+  "country_code": "PL",
+  "lat": 52.23,
+  "lon": 21.01,
+  "name": "Warsaw",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "prague",
+  "country_code": "CZ",
+  "lat": 50.08,
+  "lon": 14.43,
+  "name": "Prague",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "bratislava",
+  "country_code": "SK",
+  "lat": 48.15,
+  "lon": 17.115,
+  "name": "Bratislava",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "budapest",
+  "country_code": "HU",
+  "lat": 47.5,
+  "lon": 19.065,
+  "name": "Budapest",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "bucharest",
+  "country_code": "RO",
+  "lat": 44.435,
+  "lon": 26.105,
+  "name": "Bucharest",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "sofia",
+  "country_code": "BG",
+  "lat": 42.695,
+  "lon": 23.325,
+  "name": "Sofia",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "athens",
+  "country_code": "GR",
+  "lat": 37.98,
+  "lon": 23.735,
+  "name": "Athens",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "zagreb",
+  "country_code": "HR",
+  "lat": 45.81,
+  "lon": 15.98,
+  "name": "Zagreb",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "ljubljana",
+  "country_code": "SI",
+  "lat": 46.055,
+  "lon": 14.51,
+  "name": "Ljubljana",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "belgrade",
+  "country_code": "RS",
+  "lat": 44.805,
+  "lon": 20.465,
+  "name": "Belgrade",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "sarajevo",
+  "country_code": "BA",
+  "lat": 43.855,
+  "lon": 18.405,
+  "name": "Sarajevo",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "stockholm",
+  "country_code": "SE",
+  "lat": 59.335,
+  "lon": 18.045,
+  "name": "Stockholm",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "oslo",
+  "country_code": "NO",
+  "lat": 59.92,
+  "lon": 10.755,
+  "name": "Oslo",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "helsinki",
+  "country_code": "FI",
+  "lat": 60.175,
+  "lon": 24.94,
+  "name": "Helsinki",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "copenhagen",
+  "country_code": "DK",
+  "lat": 55.68,
+  "lon": 12.565,
+  "name": "Copenhagen",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "lagos",
+  "country_code": "NG",
+  "lat": 6.506,
+  "lon": 3.358,
+  "name": "Lagos",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "accra",
+  "country_code": "GH",
+  "lat": 5.575,
+  "lon": -0.195,
+  "name": "Accra",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "abidjan",
+  "country_code": "CI",
+  "lat": 5.35,
+  "lon": -4.015,
+  "name": "Abidjan",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "dakar",
+  "country_code": "SN",
+  "lat": 14.71,
+  "lon": -17.455,
+  "name": "Dakar",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "casablanca",
+  "country_code": "MA",
+  "lat": 33.585,
+  "lon": -7.625,
+  "name": "Casablanca",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "algiers",
+  "country_code": "DZ",
+  "lat": 36.755,
+  "lon": 3.055,
+  "name": "Algiers",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "tunis",
+  "country_code": "TN",
+  "lat": 36.81,
+  "lon": 10.18,
+  "name": "Tunis",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "addis_ababa",
+  "country_code": "ET",
+  "lat": 9.015,
+  "lon": 38.755,
+  "name": "Addis Ababa",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "nairobi",
+  "country_code": "KE",
+  "lat": -1.285,
+  "lon": 36.82,
+  "name": "Nairobi",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "dar_es_salaam",
+  "country_code": "TZ",
+  "lat": -6.815,
+  "lon": 39.27,
+  "name": "Dar Es Salaam",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "kampala",
+  "country_code": "UG",
+  "lat": 0.32,
+  "lon": 32.58,
+  "name": "Kampala",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "kigali",
+  "country_code": "RW",
+  "lat": -1.95,
+  "lon": 30.065,
+  "name": "Kigali",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "kinshasa",
+  "country_code": "CD",
+  "lat": -4.325,
+  "lon": 15.3,
+  "name": "Kinshasa",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "luanda",
+  "country_code": "AO",
+  "lat": -8.835,
+  "lon": 13.245,
+  "name": "Luanda",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "lusaka",
+  "country_code": "ZM",
+  "lat": -15.415,
+  "lon": 28.285,
+  "name": "Lusaka",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "harare",
+  "country_code": "ZW",
+  "lat": -17.825,
+  "lon": 31.05,
+  "name": "Harare",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "maputo",
+  "country_code": "MZ",
+  "lat": -25.96,
+  "lon": 32.585,
+  "name": "Maputo",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "antananarivo",
+  "country_code": "MG",
+  "lat": -18.91,
+  "lon": 47.525,
+  "name": "Antananarivo",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "toronto",
+  "country_code": "CA",
+  "lat": 43.655,
+  "lon": -79.385,
+  "name": "Toronto",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "mexico_city",
+  "country_code": "MX",
+  "lat": 19.42,
+  "lon": -99.16,
+  "name": "Mexico City",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "guatemala_city",
+  "country_code": "GT",
+  "lat": 14.61,
+  "lon": -90.52,
+  "name": "Guatemala City",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "belize_city",
+  "country_code": "BZ",
+  "lat": 17.5,
+  "lon": -88.19,
+  "name": "Belize City",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "san_salvador",
+  "country_code": "SV",
+  "lat": 13.7,
+  "lon": -89.205,
+  "name": "San Salvador",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "tegucigalpa",
+  "country_code": "HN",
+  "lat": 14.095,
+  "lon": -87.205,
+  "name": "Tegucigalpa",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "managua",
+  "country_code": "NI",
+  "lat": 12.13,
+  "lon": -86.26,
+  "name": "Managua",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "san_jose",
+  "country_code": "CR",
+  "lat": 9.935,
+  "lon": -84.08,
+  "name": "San Jose",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "panama_city",
+  "country_code": "PA",
+  "lat": 8.985,
+  "lon": -79.525,
+  "name": "Panama City",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "havana",
+  "country_code": "CU",
+  "lat": 23.135,
+  "lon": -82.365,
+  "name": "Havana",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "kingston",
+  "country_code": "JM",
+  "lat": 18.01,
+  "lon": -76.795,
+  "name": "Kingston",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "buenos_aires",
+  "country_code": "AR",
+  "lat": -34.6,
+  "lon": -58.42,
+  "name": "Buenos Aires",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "santiago",
+  "country_code": "CL",
+  "lat": -33.445,
+  "lon": -70.635,
+  "name": "Santiago",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "lima",
+  "country_code": "PE",
+  "lat": -12.065,
+  "lon": -77.04,
+  "name": "Lima",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "bogota",
+  "country_code": "CO",
+  "lat": 4.65,
+  "lon": -74.065,
+  "name": "Bogota",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "quito",
+  "country_code": "EC",
+  "lat": -0.205,
+  "lon": -78.49,
+  "name": "Quito",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "la_paz",
+  "country_code": "BO",
+  "lat": -16.5,
+  "lon": -68.13,
+  "name": "La Paz",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "montevideo",
+  "country_code": "UY",
+  "lat": -34.905,
+  "lon": -56.18,
+  "name": "Montevideo",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "auckland",
+  "country_code": "NZ",
+  "lat": -36.86,
+  "lon": 174.76,
+  "name": "Auckland",
+  "split": "test",
+  "render": true
+ },
+ {
+  "id": "suva",
+  "country_code": "FJ",
+  "lat": -18.14,
+  "lon": 178.435,
+  "name": "Suva",
+  "split": "val",
+  "render": true
+ },
+ {
+  "id": "port_moresby",
+  "country_code": "PG",
+  "lat": -9.465,
+  "lon": 147.185,
+  "name": "Port Moresby",
+  "split": "train",
+  "render": true
+ },
+ {
+  "id": "noumea",
+  "country_code": "AU",
+  "lat": -22.275,
+  "lon": 166.455,
+  "name": "Noumea",
+  "split": "train",
+  "render": true
+ }
+]

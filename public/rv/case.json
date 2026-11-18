@@ -1,0 +1,47 @@
+{
+ "qid": "F2/lusaka/l2/00001",
+ "city": "lusaka",
+ "sources": [
+  "lusaka/level_2/samples/sample_00001/mode_1",
+  "lusaka/level_2/samples/sample_00001/mode_2"
+ ],
+ "render": "case_render.webp",
+ "ref": "case_ref.webp",
+ "tgt": "case_tgt.webp",
+ "regions": {
+  "R1": {
+   "x": 0.5,
+   "y": 0.5,
+   "w": 0.125,
+   "h": 0.125,
+   "ref": 49.1,
+   "tgt": 69.8
+  },
+  "R2": {
+   "x": 0.125,
+   "y": 0.75,
+   "w": 0.125,
+   "h": 0.125,
+   "ref": 48.7,
+   "tgt": 80.7
+  },
+  "R3": {
+   "x": 0.875,
+   "y": 0.25,
+   "w": 0.125,
+   "h": 0.125,
+   "ref": 38.3,
+   "tgt": 59.9
+  },
+  "R4": {
+   "x": 0.25,
+   "y": 0.875,
+   "w": 0.125,
+   "h": 0.125,
+   "ref": 18.2,
+   "tgt": 36.9
+  }
+ },
+ "ref_best": "R1",
+ "tgt_best": "R2"
+}
