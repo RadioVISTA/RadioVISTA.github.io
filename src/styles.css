@@ -45,7 +45,7 @@
   --case-win-ink: #0b1f12;
   --f-deep: #9a4a12;
   --f-mid: #b5561a;
-  --land: #d9dde3;
+  --land: #c2c8d0;
   --tile: #0b0f1a;
   --mask: #000;
   --lens-line: rgba(255, 255, 255, 0.7);
@@ -208,13 +208,18 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* World map */
-.map { width: 100%; max-width: 960px; margin-inline: auto; height: auto; display: block; }
-.map .land { fill: var(--land); }
-.map .city { cursor: pointer; }
-.map-foot { display: flex; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-top: 14px; font-size: 14px; color: var(--ink-2); }
-.map-legend { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-.map-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; }
-.map-tip { min-height: 22px; margin: 0; font-weight: 600; color: var(--ink); }
+.wmap { max-width: 1040px; margin: var(--sp-block) auto 0; }
+.map { width: 100%; height: auto; display: block; overflow: visible; }
+.map .land { fill: none; stroke: var(--land); stroke-linecap: round; }
+.map .dot { stroke: var(--bg-alt); stroke-width: 1.5; }
+.map .pulse { transform-box: fill-box; transform-origin: center; opacity: 0; animation: wmap-pulse 3.6s ease-out infinite; pointer-events: none; }
+@keyframes wmap-pulse { 0% { scale: 1; opacity: 0.45; } 70%, 100% { scale: 4.2; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .map .pulse { animation: none; opacity: 0.18; scale: 2.4; } }
+.map-legend { display: flex; justify-content: center; gap: 10px 32px; flex-wrap: wrap; margin-top: 22px; font-size: 14px; color: var(--ink-2); }
+.map-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.map-legend i { width: 9px; height: 9px; border-radius: 50%; }
+.map-legend .test i { box-shadow: 0 0 0 4px color-mix(in srgb, #1a7f7a 18%, transparent); }
+.map-legend b { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 
 /* City strip */
 .cities { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; margin-top: var(--sp-block); }

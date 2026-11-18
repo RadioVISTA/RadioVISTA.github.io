@@ -12,7 +12,7 @@ write to `~/tmp_site_export/out/`. They only read the dataset.
 | Script | Writes | Notes |
 |---|---|---|
 | `export.py` | `cities.json`, `city_<id>_{render,field}.webp` (gallery), first `manifest.json` | its hero section is superseded by `hero_export.py` |
-| `land.py` | `land.json` | 2° dot grid of land for the world map |
+| `land-dots.cjs` | `land.json` | 1.5° dot grid of land for the world map (replaces `land.py`) |
 | `matched.py` | `m_L*M*.webp` (signal strength), `a_L*M*.webp` (what each mechanism adds), `manifest_matched.json` | New York, 600 m window, coverage at −90 dBm |
 | `hero_candidates.py` | a contact sheet of candidate hero windows | used once to pick Rome |
 | `hero_export.py rome 0 1000 477 1477` | `hero_{render,field}.webp` | the hero lens layers |
