@@ -12,6 +12,7 @@ export default function Paper() {
         <div className="btns">
           <ResourceButton href={LINKS.arxiv} primary>arXiv</ResourceButton>
           <ResourceButton href={LINKS.pdf}>PDF</ResourceButton>
+          <ResourceButton href={LINKS.huggingface}>Hugging Face</ResourceButton>
           <ResourceButton href={LINKS.code}>Code</ResourceButton>
           <ResourceButton href={LINKS.dataset}>Data</ResourceButton>
         </div>

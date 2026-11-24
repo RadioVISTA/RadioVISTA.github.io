@@ -5,6 +5,8 @@
 Project site for **RadioVISTA** and the paper *Seeing the Invisible: How Vision-Language Models Read,
 Predict and Trace Radio Fields*. Served at **https://radiovista.github.io**.
 
+Paper: [arXiv:2611.28123](https://arxiv.org/abs/2611.28123) · [PDF](https://arxiv.org/pdf/2611.28123) · [Hugging Face](https://huggingface.co/papers/2611.28123).
+
 Vite, React and TypeScript; charts are hand-built SVG redraws of the paper's figures.
 
 ## Develop

@@ -18,8 +18,9 @@ export const PAPER = {
 
 export const LINKS = {
   github: 'https://github.com/RadioVISTA',
-  arxiv: null as string | null, // fill in after the arXiv announcement
-  pdf: null as string | null,
+  arxiv: 'https://arxiv.org/abs/2611.28123',
+  pdf: 'https://arxiv.org/pdf/2611.28123',
+  huggingface: 'https://huggingface.co/papers/2611.28123',
   code: null as string | null,
   dataset: null as string | null,
 }
@@ -29,8 +30,10 @@ export const BIBTEX = `@article{zhu2026radiovista,
              Read, Predict and Trace Radio Fields},
   author  = {Zhu, Yiyang and Li, Xin and Liu, Guangyuan and
              Liu, Ziheng and Zhang, Jiayi and Yuen, Chau},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-  year    = {2026}
+  journal = {arXiv preprint arXiv:2611.28123},
+  year    = {2026},
+  doi     = {10.48550/arXiv.2611.28123},
+  url     = {https://arxiv.org/abs/2611.28123}
 }`
 
 export const GROUPS = {

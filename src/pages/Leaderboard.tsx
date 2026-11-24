@@ -216,7 +216,7 @@ export default function Leaderboard() {
           <h2 className="h2t">Add your model</h2>
           <div className="body">
             <p>
-              The evaluation code and test split will be released with the paper. We plan to accept submissions as pull
+              The evaluation code and test split are coming soon. We plan to accept submissions as pull
               requests with model outputs, scored by the same deterministic answer parser.
             </p>
           </div>

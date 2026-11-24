@@ -160,6 +160,7 @@ export default function Home() {
             </div>
             <div className="links">
               {LINKS.arxiv ? <a href={LINKS.arxiv}>Paper</a> : <Link to="/paper">Paper</Link>}
+              <a href={LINKS.huggingface}>Hugging Face</a>
               <Link to="/findings">Findings</Link>
               {LINKS.dataset ? <a href={LINKS.dataset}>Data</a> : <span className="off">Data soon</span>}
             </div>
