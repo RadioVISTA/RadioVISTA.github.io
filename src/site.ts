@@ -21,8 +21,10 @@ export const LINKS = {
   arxiv: 'https://arxiv.org/abs/2611.28123',
   pdf: 'https://arxiv.org/pdf/2611.28123',
   huggingface: 'https://huggingface.co/papers/2611.28123',
-  code: null as string | null,
-  dataset: null as string | null,
+  benchmark: 'https://github.com/RadioVISTA/radiovista-bench',
+  engine: 'https://github.com/RadioVISTA/radiovista',
+  code: 'https://github.com/RadioVISTA/radiovista',
+  dataset: 'https://huggingface.co/datasets/ScreeperC/radiovista-bench',
 }
 
 export const BIBTEX = `@article{zhu2026radiovista,

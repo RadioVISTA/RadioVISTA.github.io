@@ -2,7 +2,7 @@ import { Fragment, useMemo, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 import { prefersReducedMotion, useResults, type Row } from '../data'
 import { EASE_OUT, growKeyframes, usePlayOnce } from '../motion'
-import { GROUPS, TASKS } from '../site'
+import { GROUPS, LINKS, TASKS } from '../site'
 import { Seg } from '../components/ui'
 import Dissociation from '../components/Dissociation'
 
@@ -216,8 +216,9 @@ export default function Leaderboard() {
           <h2 className="h2t">Add your model</h2>
           <div className="body">
             <p>
-              The evaluation code and test split are coming soon. We plan to accept submissions as pull
-              requests with model outputs, scored by the same deterministic answer parser.
+              The <a href={LINKS.dataset}>test split is available on Hugging Face</a>, including images, prompts and answers.
+              The official evaluation toolkit is coming soon; follow <a href={LINKS.benchmark}>radiovista-bench</a> for
+              the parser, scorer and submission instructions. The scores above are the results reported in the paper.
             </p>
           </div>
         </div>

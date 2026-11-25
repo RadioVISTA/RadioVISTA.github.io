@@ -40,6 +40,16 @@ src/
   styles.css  design tokens and all styles
 ```
 
+## Release status
+
+The paper and [benchmark dataset](https://huggingface.co/datasets/ScreeperC/radiovista-bench)
+are available. The dataset contains 6,990 questions: 4,735 training, 1,055 validation and
+1,200 test questions, split across 68 / 15 / 17 disjoint cities. Evaluation tools,
+training recipes and LoRA weights, the scene engine and raw fields are coming in stages.
+Dataset counts, splits and loading examples follow the live
+[Hugging Face dataset card](https://huggingface.co/datasets/ScreeperC/radiovista-bench).
+Tool release status follows the adjacent `radiovista-bench` and `RadioVISTA` repository READMEs.
+
 ## Content updates
 
 | To change | Edit or run |

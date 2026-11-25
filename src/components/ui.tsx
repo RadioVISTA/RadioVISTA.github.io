@@ -23,7 +23,7 @@ export function ResourceButton({ href, children, primary }: { href: string | nul
   if (!href)
     return (
       <span className="btn soon">
-        {children} <span className="note">soon<span className="sr-only">, available with the arXiv release</span></span>
+        {children} <span className="note">soon<span className="sr-only">, not yet released</span></span>
       </span>
     )
   return (
@@ -41,7 +41,7 @@ export function RouteButton({ to, children, primary }: { to: string; children: R
   )
 }
 
-export function CopyBlock({ text, label }: { text: string; label: string }) {
+export function CopyBlock({ text, label, copyLabel = 'Copy BibTeX' }: { text: string; label: string; copyLabel?: string }) {
   const [state, setState] = useState<'idle' | 'done' | 'fail'>('idle')
   const copy = async () => {
     try {
@@ -57,7 +57,7 @@ export function CopyBlock({ text, label }: { text: string; label: string }) {
     <div className="codeblock">
       <pre aria-label={label}>{text}</pre>
       <button className="copy" onClick={copy}>
-        <span aria-live="polite">{state === 'done' ? 'Copied' : state === 'fail' ? 'Select and copy' : 'Copy BibTeX'}</span>
+        <span aria-live="polite">{state === 'done' ? 'Copied' : state === 'fail' ? 'Select and copy' : copyLabel}</span>
       </button>
     </div>
   )

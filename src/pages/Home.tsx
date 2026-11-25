@@ -26,7 +26,7 @@ const PILLARS = [
     to: '#engine',
     img: ['city_tokyo_render.webp'],
     title: 'Global scene engine',
-    text: 'Turns any coordinate on Earth into a watertight, ray-traceable city with ITU-R materials, fused from 23 open geospatial sources.',
+    text: 'Turns any coordinate on Earth into a watertight, ray-traceable city with ITU-R materials, built from global building, terrain, land-cover and road data.',
   },
   {
     to: '#fields',
@@ -156,13 +156,15 @@ export default function Home() {
               they miss.
             </p>
             <div className="btns">
-              <RouteButton to="/leaderboard" primary>See the leaderboard</RouteButton>
+              <ResourceButton href={LINKS.dataset} primary>Explore the dataset</ResourceButton>
+              <RouteButton to="/leaderboard">See the leaderboard</RouteButton>
             </div>
             <div className="links">
               {LINKS.arxiv ? <a href={LINKS.arxiv}>Paper</a> : <Link to="/paper">Paper</Link>}
               <a href={LINKS.huggingface}>Hugging Face</a>
               <Link to="/findings">Findings</Link>
               {LINKS.dataset ? <a href={LINKS.dataset}>Data</a> : <span className="off">Data soon</span>}
+              {LINKS.code && <a href={LINKS.code}>Code</a>}
             </div>
           </div>
           <FieldReveal />
