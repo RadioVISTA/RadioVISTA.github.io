@@ -156,8 +156,7 @@ export default function Home() {
               they miss.
             </p>
             <div className="btns">
-              <ResourceButton href={LINKS.dataset} primary>Explore the dataset</ResourceButton>
-              <RouteButton to="/leaderboard">See the leaderboard</RouteButton>
+              <RouteButton to="/leaderboard" primary>See the leaderboard</RouteButton>
             </div>
             <div className="links">
               {LINKS.arxiv ? <a href={LINKS.arxiv}>Paper</a> : <Link to="/paper">Paper</Link>}
@@ -204,7 +203,7 @@ export default function Home() {
             ))}
           </div>
           <p className="center">
-            <Link className="more" to="/paper">Read the paper</Link>
+            <a className="more" href={LINKS.huggingface}>Read the paper</a>
           </p>
         </div>
       </section>
@@ -353,7 +352,7 @@ export default function Home() {
           </div>
           <div className="btns" style={{ justifyContent: 'center', marginBottom: released ? 40 : 0 }}>
             <RouteButton to="/leaderboard" primary>See the leaderboard</RouteButton>
-            {LINKS.arxiv ? <ResourceButton href={LINKS.arxiv}>Read the paper</ResourceButton> : <RouteButton to="/findings">Read the findings</RouteButton>}
+            {LINKS.arxiv ? <ResourceButton href={LINKS.huggingface}>Read the paper</ResourceButton> : <RouteButton to="/findings">Read the findings</RouteButton>}
             {LINKS.code && <ResourceButton href={LINKS.code}>Get the code</ResourceButton>}
             {LINKS.dataset && <ResourceButton href={LINKS.dataset}>Download the data</ResourceButton>}
           </div>
